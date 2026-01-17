@@ -3,7 +3,7 @@
   "displayName": "FAHH! Error Sound",
   "description": "Plays the iconic fahh meme sound when errors appear in VS Code",
   "version": "0.0.2",
-  "publisher": "zeddkhan",
+  "publisher": "MohdZaidKhan",
   "repository": {
     "type": "git",
     "url": "https://github.com/zeddkhan03/fahh-error"
