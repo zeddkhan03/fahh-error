@@ -1,52 +1,41 @@
 {
   "name": "fahh-error",
   "displayName": "FAHH! Error Sound",
-  "description": "Plays the iconic fahh meme sound when errors appear in VS Code",
-  "version": "0.0.2",
+  "description": "Plays the iconic FAHH meme sound whenever VS Code detects an error",
+  "version": "0.1.6",
   "publisher": "MohdZaidKhan",
   "repository": {
     "type": "git",
     "url": "https://github.com/zeddkhan03/fahh-error"
   },
   "engines": {
-    "vscode": "^1.108.1"
+    "vscode": "^1.90.0"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onDidChangeDiagnostics"
+    "onStartupFinished",
+    "onCommand:fahhError.test"
   ],
-  "main": "./out/extension.js",
-  "icon": "icon.png",
+  "main": "./extension.js",
+  "icon": "icon1.png",
   "contributes": {
+    "commands": [
+      {
+        "command": "fahhError.test",
+        "title": "FAHH: Test Sound"
+      }
+    ],
     "configuration": {
       "title": "FAHH Error",
       "properties": {
         "fahhError.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable fahh sound when errors appear"
+          "description": "Enable FAHH sound when VS Code detects errors"
         }
       }
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.108.1",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript": "^5.9.3",
-    "eslint": "^9.39.2",
-    "typescript-eslint": "^8.52.0",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
   }
 }
